@@ -9,15 +9,22 @@ import pandas as pd
 
 class Hotel:
     def __init__(self, id):
-        pass
+        self.id = id
+        #self.name = df.loc[df["id"]==self.id, "name"].squeeze()
 
 
     def available(self):
-        pass
+        availablity = df.loc[df["id"]==self.id, "available"].squeeze()
+        if "yes" == availablity:
+            return True
+        else:
+            return False
 
 
     def book(self):
-        pass
+        df.loc[df["id"]==self.id, "available"] = "no"
+        df.to_csv("hotels.csv", index = False)
+        print("Booking done.")
 
 
 
