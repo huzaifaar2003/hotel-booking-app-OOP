@@ -36,6 +36,7 @@ class Confirmation:
         content = f"{self.name}'s booking is confirmed at {self.hotel.name}"
         return content
 
+
 df = pd.read_csv("hotels.csv")
 print(df)
 hotel_id = input("Enter hotel id: ")
