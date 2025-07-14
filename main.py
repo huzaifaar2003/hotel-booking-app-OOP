@@ -10,7 +10,7 @@ import pandas as pd
 class Hotel:
     def __init__(self, id):
         self.id = id
-        #self.name = df.loc[df["id"]==self.id, "name"].squeeze()
+        self.name = df.loc[df["id"]==self.id, "name"].squeeze() # added this when implementing Confirmation class
 
 
     def available(self):
@@ -30,11 +30,11 @@ class Hotel:
 
 class Confirmation:
     def __init__(self, customer_name, Hotel_object):
-        pass
+        self.name = customer_name
+        self.hotel = Hotel_object
     def generate(self):
-        pass
-
-    pass
+        content = f"{self.name}'s booking is confirmed at {self.hotel.name}"
+        return content
 
 df = pd.read_csv("hotels.csv")
 print(df)
